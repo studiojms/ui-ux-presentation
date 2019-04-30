@@ -1,0 +1,17 @@
+{
+  "name": "ui-ux-presentation",
+  "version": "1.0.0",
+  "description": "UI e UX: Usabilidade e Experiência do Usuário",
+  "main": "index.js",
+  "repository": "git@github.com:studiojms/ui-ux-presentation.git",
+  "author": "Jefferson M Souza <jefferson.msouza86@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx",
+    "mdx-help": "mdx-deck"
+  },
+  "devDependencies": {
+    "mdx-deck": "1.10.2"
+  }
+}
