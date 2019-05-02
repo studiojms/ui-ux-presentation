@@ -1,5 +1,5 @@
 import React from 'react';
-import { Deck, Heading, ListItem, Image, List, Quote, Slide, Text, Appear } from 'spectacle';
+import { Deck, Heading, ListItem, Image, List, Quote, Slide, Text, Appear, Cite, BlockQuote, Notes } from 'spectacle';
 import createTheme from 'spectacle/lib/themes/default';
 
 require('normalize.css');
@@ -67,7 +67,7 @@ export default class Presentation extends React.Component {
       <Deck transition={['zoom', 'slide']} transitionDuration={500} theme={theme}>
         <Slide transition={['zoom']} bgColor="primary" bgImage="assets/ui-ux.png">
           <Heading fit margin={'20% 0 0 0'} caps lineHeight={1} textColor="tertiary">
-            Usabilidade e Experiência do Usuário
+            UX - Experiência do Usuário
           </Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="tertiary">
@@ -84,59 +84,14 @@ export default class Presentation extends React.Component {
           </Heading>
           <Image src="assets/confirm-right-aligned.png" />
         </Slide>
-        <Slide transition={['slide']} bgColor="tertiary">
-          <Heading size={3} textColor="secondary" caps>
-            Usabilidade
+        <Slide transition={['fade']} bgColor="tertiary">
+          <Heading size={4} textColor="primary" caps>
+            Necessidade: Estudar sobre o assunto
           </Heading>
-          <Appear>
-            <Quote size={6} italic>
-              Capacidade de conseguir que o usuário alcance suas metas no uso de um produto.
-            </Quote>
-          </Appear>
-        </Slide>
-        <Slide transition={['slide']} bgColor="tertiary">
-          <Heading size={3} textColor="secondary" caps>
-            Usabilidade
-          </Heading>
-          <List textColor="primary">
-            <Appear>
-              <ListItem>Eficiência no uso (algo fácil de usar)</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>Facilidade de memorização / reconhecimento</ListItem>
-            </Appear>
-          </List>
-        </Slide>
-        <Slide>
-          <Heading size={3} textColor="secondary" caps>
-            não é usabilidade
-          </Heading>
-          <List textColor="secondary">
-            <Appear>
-              <ListItem>Uma funcionalidade</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>etapa final após a construção do projeto / produto</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>Não é algo de projetos com visuais elaborados</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem>Não é algo restrito ao mundo do software</ListItem>
-            </Appear>
-          </List>
-        </Slide>
-        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <Heading size={3} textColor="primary" caps>
-            Usabilidade no mundo real
-          </Heading>
-        </Slide>
-        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <Image src="assets/buttons.jpg" width={800} />
         </Slide>
         <Slide transition={['fade']} bgColor="tertiary" bgImage="assets/donnorman.jpeg">
           <Heading size={5} textColor="secondary" caps margin="0 0 45% 0">
-            UX - Experiência do Usuário
+            O que é Experiência do Usuário?
           </Heading>
         </Slide>
         <Slide
@@ -147,18 +102,67 @@ export default class Presentation extends React.Component {
           bgDarken={0.5}
         >
           <Heading size={5} margin="0 0 35% 0" textColor="primary" caps>
-            UX - Experiência do Usuário
+            O que é Experiência do Usuário?
           </Heading>
           <List>
-            <Appear>
-              <ListItem>Termo criado por Don Norman nos anos 90</ListItem>
-            </Appear>
+            <ListItem>Termo criado por Don Norman nos anos 90</ListItem>
             <Appear>
               <ListItem>Engenheiro da Apple</ListItem>
             </Appear>
           </List>
         </Slide>
-        <Slide transition={['slide']} bgColor="secondary" textColor="primary">
+        <Slide
+          transition={['fade']}
+          bgColor="primary"
+          textColor="primary"
+          bgImage="assets/donnorman.jpeg"
+          bgDarken={0.6}
+        >
+          <BlockQuote>
+            <Quote textSize={40}>
+              ...interface do usuário e usabilidade eram muito restritos, eu queria cobrir todos os aspectos da
+              experiência de uma pessoa com o sistema, incluindo design industrial, gráficos, a interface, a interação
+              física e o manual. Desde então o termo tem se espalhado amplamente...
+            </Quote>
+            <Cite>Don Norman</Cite>
+          </BlockQuote>
+        </Slide>
+
+        <Slide transition={['slide']}>
+          <Heading size={5} textColor="secondary" caps>
+            Evolução da Experiência do Usuário
+          </Heading>
+
+          <Image src="assets/evolucao_experiencia_usuario.png" width="110%" />
+          <Notes>
+            <List>
+              <ListItem textSize={28}>Utilidade: computador facilita operações de rotina.</ListItem>
+              <ListItem textSize={28}>Usabilidade: Facilidade e eficiência no uso.</ListItem>
+              <ListItem textSize={28}>
+                Rentabilidade: aspectos para aumentar a lucratividade. (visitantes, funil de vendas, comportamento do
+                usuário)
+              </ListItem>
+              <ListItem textSize={28}>
+                Estrategibilidade: Design da Experiência do Usuário influenciando a estratégia do negócio.
+              </ListItem>
+            </List>
+          </Notes>
+        </Slide>
+        <Slide transition={['slide']} bgColor="secondary">
+          <Image src="assets/ux-umbrella.png" width="150%" />
+        </Slide>
+        <Slide transition={['slide']} bgColor="secondary">
+          <Image src="assets/Ux_Usability.png" width="150%" />
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <Heading size={3} textColor="primary" caps>
+            UX no mundo real
+          </Heading>
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+          <Image src="assets/buttons.jpg" width={800} />
+        </Slide>
+        <Slide transition={['slide']} bgColor="tertiary" textColor="primary">
           <Heading size={5} textColor="primary" caps>
             Princípios
           </Heading>
@@ -167,7 +171,20 @@ export default class Presentation extends React.Component {
             Por que alguns produtos satisfazem os consumidores, enquanto outros os deixam completamente frustrados?
           </Text>
         </Slide>
-        <Slide transition={['slide']} bgColor="secondary" textColor="primary">
+        <Slide bgColor="tertiary">
+          <Heading size={5} textColor="primary" caps>
+            Princípios
+          </Heading>
+          <List textColor="primary">
+            <ListItem>Visibilidade</ListItem>
+            <ListItem>Feedback</ListItem>
+            <ListItem>Restrições</ListItem>
+            <ListItem>Mapeamento</ListItem>
+            <ListItem>Consistência</ListItem>
+            <ListItem>Affordance</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={['slide']} bgColor="tertiary" textColor="primary">
           <Heading size={5} textColor="primary" caps>
             Visibilidade
           </Heading>
@@ -179,7 +196,13 @@ export default class Presentation extends React.Component {
             <Image src="assets/porta.jpg" width="50%" />
           </Appear>
         </Slide>
-        <Slide transition={['slide']} bgColor="secondary" textColor="primary">
+        <Slide transition={['slide']} bgColor="tertiary">
+          <Heading size={5} textColor="primary" caps>
+            Visibilidade
+          </Heading>
+          <Image src="assets/charlie-brown-normandoors.gif" />
+        </Slide>
+        <Slide transition={['slide']} bgColor="tertiary" textColor="primary">
           <Heading size={5} textColor="primary" caps>
             Feedback
           </Heading>
@@ -188,7 +211,7 @@ export default class Presentation extends React.Component {
             <Image src="assets/feedback.png" />
           </Appear>
         </Slide>
-        <Slide transition={['slide']} bgColor="secondary" textColor="primary">
+        <Slide transition={['slide', 'fade']} bgColor="tertiary" textColor="primary">
           <Heading size={5} textColor="primary" caps>
             Restrições
           </Heading>
@@ -200,13 +223,13 @@ export default class Presentation extends React.Component {
             <Image src="assets/restricoes.png" />
           </Appear>
         </Slide>
-        <Slide transition={['slide']} bgColor="secondary" textColor="primary">
+        <Slide transition={['fade']} bgColor="tertiary" textColor="primary">
           <Heading size={5} textColor="primary" caps>
             Restrições
           </Heading>
           <Image src="assets/restricoes-2.png" />
         </Slide>
-        <Slide transition={['slide']} bgColor="secondary" textColor="primary">
+        <Slide transition={['slide']} bgColor="tertiary" textColor="primary">
           <Heading size={5} textColor="primary" caps>
             Mapeamento
           </Heading>
@@ -215,13 +238,13 @@ export default class Presentation extends React.Component {
             <Image src="assets/mapping.png" />
           </Appear>
         </Slide>
-        <Slide transition={['slide']} bgColor="secondary" textColor="primary">
+        <Slide transition={['slide']} bgColor="tertiary" textColor="primary">
           <Heading size={5} textColor="primary" caps>
             Mapeamento
           </Heading>
           <Image src="assets/mapeamento.jpeg" />
         </Slide>
-        <Slide transition={['slide']} bgColor="secondary" textColor="primary">
+        <Slide transition={['slide']} bgColor="tertiary" textColor="primary">
           <Heading size={5} textColor="primary" caps>
             Consistência
           </Heading>
@@ -230,7 +253,7 @@ export default class Presentation extends React.Component {
             <Image src="assets/consistencia.png" />
           </Appear>
         </Slide>
-        <Slide transition={['slide']} bgColor="secondary" textColor="primary">
+        <Slide transition={['slide']} bgColor="tertiary" textColor="primary">
           <Heading size={5} textColor="primary" caps>
             Affordance
           </Heading>
@@ -239,15 +262,17 @@ export default class Presentation extends React.Component {
             <Image src="assets/affordance.png" />
           </Appear>
         </Slide>
-        <Slide transition={['slide']} bgColor="secondary" textColor="primary">
+        <Slide transition={['slide']} bgColor="tertiary" textColor="primary">
           <Heading size={5} textColor="primary" caps>
             Affordance
           </Heading>
           <Image src="assets/teapot.jpeg" />
         </Slide>
-        <Slide transition={['slide']} bgColor="primary" bgImage="assets/Ux_Usability.png" />
         <Slide transition={['slide']} bgColor="primary">
           <Image src="assets/uiuxusability.jpg" />
+        </Slide>
+        <Slide transition={['slide']} bgColor="primary">
+          Panda
         </Slide>
       </Deck>
     );
